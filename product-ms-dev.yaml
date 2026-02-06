@@ -32,3 +32,6 @@ management:
     web:
       exposure:
         include: health,info,busrefresh,refresh
+  tracing:
+    sampling:
+      probability: 1.0
