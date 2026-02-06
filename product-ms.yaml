@@ -23,12 +23,15 @@ spring:
         jdbc:
           time_zone: Asia/Kolkata
   zipkin:
-    base-url: http://localhost:9411
+    base-url: ${ZIPKIN_URL}
 management:
   endpoints:
     web:
       exposure:
-        include: health,info,busrefresh,refresh
+        include: health,info,busrefresh,refresh,prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}
   tracing:
     sampling:
-      probability: 1.0
+      probability: 0.5
