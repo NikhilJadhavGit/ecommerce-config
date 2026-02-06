@@ -11,7 +11,6 @@ spring:
     url: ${DB_URL}
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
-
   rabbitmq:
     host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT}
@@ -26,6 +25,8 @@ spring:
         format_sql: true
         jdbc:
           time_zone: Asia/Kolkata
+  zipkin:
+    base-url: http://localhost:9411
 
 management:
   endpoints:
