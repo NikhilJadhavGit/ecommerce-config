@@ -2,8 +2,6 @@ server:
   port: 8080
 
 spring:
-  zipkin:
-    base-url: ${ZIPKIN_URL}
   rabbitmq:
     host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT}
@@ -36,6 +34,9 @@ management:
   tracing:
     sampling:
       probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_URL}/api/v2/spans
 
 resilience4j:
   circuitbreaker:
