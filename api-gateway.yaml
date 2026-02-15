@@ -4,6 +4,11 @@ server:
 spring:
   zipkin:
     base-url: ${ZIPKIN_URL}
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
   redis:
     host: ${REDIS_HOST}
     port: ${REDIS_PORT}
@@ -21,7 +26,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,prometheus,circuitbreakers
+        include: health,info,metrics,prometheus,circuitbreakers,busrefresh,refresh
     endpoint:
       health:
         show-details: always
